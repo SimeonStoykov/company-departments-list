@@ -10,6 +10,7 @@ ul {
 
 .list-row {
   margin-bottom: 5px;
+  display: block;
 }
 
 .organization-section {

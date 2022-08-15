@@ -7,7 +7,7 @@ function FiltersForm({ orgData, departmentFilter, nameFilter }) {
   return (
     <section className="form-section">
       <h3 className="filters-title">Filters:</h3>
-      <form>
+      <form name="form">
         <DepartmentFilter {...departmentFilter} orgData={orgData} />
         <NameFilter {...nameFilter} />
       </form>

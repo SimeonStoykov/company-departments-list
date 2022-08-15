@@ -37,19 +37,19 @@ function EmployeeList({ depId, department, filteredOrgData, setOrgData }) {
         {depEmployeesNames.map((empName, index) => {
           return (
             <li key={index} className="list-row">
-              <input
-                type="checkbox"
-                id={`employee-${empName}`}
-                checked={filteredOrgData.departments[depId].employees[empName].selected}
-                onChange={() => handleEmployeeSelect(depId, empName)}
-              />
               <label htmlFor={`employee-${empName}`}>
+                <input
+                  type="checkbox"
+                  id={`employee-${empName}`}
+                  checked={filteredOrgData.departments[depId].employees[empName].selected}
+                  onChange={() => handleEmployeeSelect(depId, empName)}
+                />
                 <img
                   src={filteredOrgData.departments[depId].employees[empName].avatar}
                   alt="Employee Avatar"
                   className="avatar"
                 />
-                <span> - {empName}</span>
+                {empName}
               </label>
             </li>
           );

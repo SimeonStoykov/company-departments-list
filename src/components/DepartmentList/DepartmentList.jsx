@@ -41,15 +41,15 @@ function DepartmentList({ filteredOrgData, setOrgData }) {
 
           return (
             <li key={i}>
-              <div className="list-row">
+              <label htmlFor={`department-${depId}`} className="list-row">
                 <input
                   type="checkbox"
                   id={`department-${depId}`}
                   checked={filteredOrgData.departments[depId].selected}
                   onChange={() => handleDepartmentSelect(depId)}
                 />
-                <label htmlFor={`department-${depId}`}>{department.name}:</label>
-              </div>
+                {department.name}:
+              </label>
               <EmployeeList
                 depId={depId}
                 department={department}

@@ -37,6 +37,7 @@ function App() {
   };
 
   const filteredOrgData = getFilteredOrgData(orgData, depFilterValue, nameFilterValue);
+  const noFilteredResults = Object.keys(filteredOrgData.departments).length === 0;
 
   return (
     <main>
@@ -46,15 +47,20 @@ function App() {
         nameFilter={{ value: nameFilterValue, set: setNameFilterValue }}
       />
       <section className="organization-section">
-        <input
-          type="checkbox"
-          id="organization-select"
-          checked={filteredOrgData.organization.selected}
-          onChange={handleOrganizationSelect}
-        />
-        <label htmlFor="organization-select">{filteredOrgData.organization.name}</label>
+        {!noFilteredResults && (
+          <label htmlFor="organization-select">
+            <input
+              type="checkbox"
+              id="organization-select"
+              checked={filteredOrgData.organization.selected}
+              onChange={handleOrganizationSelect}
+            />
+            {filteredOrgData.organization.name}
+          </label>
+        )}
         <DepartmentList filteredOrgData={filteredOrgData} setOrgData={setOrgData} />
       </section>
+      {noFilteredResults && <p>No filtered results!</p>}
     </main>
   );
 }
