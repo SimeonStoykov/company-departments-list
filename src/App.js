@@ -4,7 +4,7 @@ import data from './data.json';
 
 import { getFilteredOrgData, getDepartmentsData } from './utils';
 import FiltersForm from './components/Filters/FiltersForm';
-import DepartmentList from './components/DepartmentList';
+import DepartmentList from './components/DepartmentList/DepartmentList';
 
 function App() {
   const originalOrgData = data.organization || { departments: [], employees: [], name: '' };
@@ -45,7 +45,7 @@ function App() {
         departmentFilter={{ value: depFilterValue, set: setDepFilterValue }}
         nameFilter={{ value: nameFilterValue, set: setNameFilterValue }}
       />
-      <section>
+      <section className="organization-section">
         <input
           type="checkbox"
           id="organization-select"
@@ -53,8 +53,8 @@ function App() {
           onChange={handleOrganizationSelect}
         />
         <label htmlFor="organization-select">{filteredOrgData.organization.name}</label>
+        <DepartmentList filteredOrgData={filteredOrgData} setOrgData={setOrgData} />
       </section>
-      <DepartmentList filteredOrgData={filteredOrgData} setOrgData={setOrgData} />
     </main>
   );
 }

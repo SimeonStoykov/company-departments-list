@@ -1,7 +1,17 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 ul {
   list-style-type: none;
 }
 
-.avatar {
-  width: 50px;
+.list-row {
+  margin-bottom: 5px;
+}
+
+.organization-section {
+  width: 200px;
 }

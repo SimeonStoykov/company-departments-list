@@ -1,6 +1,7 @@
 import React from 'react';
-import { areAllItemsSelected } from '../utils';
-import EmployeeList from './EmployeeList';
+import { areAllItemsSelected } from '../../utils';
+import EmployeeList from '../EmployeeList/EmployeeList';
+import './DepartmentList.css';
 
 function DepartmentList({ filteredOrgData, setOrgData }) {
   const handleDepartmentSelect = (depId) => {
@@ -34,13 +35,13 @@ function DepartmentList({ filteredOrgData, setOrgData }) {
 
   if (departmentsIds.length > 0) {
     return (
-      <ul>
+      <ul className="department-list">
         {departmentsIds.map((depId, i) => {
           const department = filteredOrgData.departments[depId];
 
           return (
             <li key={i}>
-              <div>
+              <div className="list-row">
                 <input
                   type="checkbox"
                   id={`department-${depId}`}

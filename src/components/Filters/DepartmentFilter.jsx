@@ -13,12 +13,12 @@ function DepartmentFilter({ orgData, value, set }) {
   };
 
   return (
-    <label>
-      Department:
-      <select value={value} onChange={handleChange}>
+    <div className="filter-row">
+      <label htmlFor="department-filter">Department:</label>
+      <select id="department-filter" value={value} onChange={handleChange}>
         {data}
       </select>
-    </label>
+    </div>
   );
 }
 

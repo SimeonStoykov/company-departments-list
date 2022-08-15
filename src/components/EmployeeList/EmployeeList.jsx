@@ -1,5 +1,6 @@
 import React from 'react';
-import { areAllItemsSelected } from '../utils';
+import { areAllItemsSelected } from '../../utils';
+import './EmployeeList.css';
 
 function EmployeeList({ depId, department, filteredOrgData, setOrgData }) {
   const handleEmployeeSelect = (depId, name) => {
@@ -35,7 +36,7 @@ function EmployeeList({ depId, department, filteredOrgData, setOrgData }) {
       <ul>
         {depEmployeesNames.map((empName, index) => {
           return (
-            <li key={index}>
+            <li key={index} className="list-row">
               <input
                 type="checkbox"
                 id={`employee-${empName}`}

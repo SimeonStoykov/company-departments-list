@@ -6,10 +6,10 @@ function NameFilter({ orgData, value, set }) {
   };
 
   return (
-    <label>
-      Name:
-      <input type="text" value={value} onChange={handleChange} />
-    </label>
+    <div className="filter-row">
+      <label htmlFor="name-filter">Name:</label>
+      <input id="name-filter" type="text" value={value} onChange={handleChange} />
+    </div>
   );
 }
 
